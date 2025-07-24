@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Nats Site.ao.co</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!---->
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    @media screen and (max-width: 728px) {
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-size: 30px;
+
+      }
+
+      .carousel-item img {
+        width: auto;
+        /* Ajusta à largura do contêiner */
+        height: 250px;
+        background-color: none;
+      }
+
+      nav {
+        padding: 10px;
+        /* Reduz o espaçamento interno */
+        text-align: center;
+        /* Centraliza o conteúdo */
+        flex-direction: column;
+        /* Alinha os elementos verticalmente */
+      }
+
+      .navbar-brand {
+        font-size: 14px;
+        /* Reduz o tamanho da marca */
+      }
+
+      .navbar-nav {
+        display: flex;
+        flex: grid;
+        /* Empilha os links verticalmente */
+        align-items: start;
+        /* Alinha para o principio */
+
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 14px;
+        /* Reduz o tamanho dos links */
+        padding: 14px 0;
+        /* Espaçamento entre os links */
+        display: flex;
+
+
+      }
+
+      .navbar-toggler {
+        margin: 10 auto;
+        /* Centraliza o botão do menu */
+      }
+
+      .navbar-toggler i {
+        font-size: 20px;
+        /* Ajusta o tamanho do ícone */
+      }
+
+
+      nav ul li a:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+
+
+      footer {
+        width: 100%;
+      }
+
+      footer element {
+
+        padding: 0px;
+      }
+
+      footer dl {
+
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+      }
+
+      footer p {
+        font-size: 15px;
+      }
+
+      .acourdion-header {
+        width: 80%;
+        max-width: auto;
+        height: auto;
+
+      }
+
+      .whatsapp-icon,
+      .linkedin-icon {
+
+        display: block;
+        padding-left: 2px;
+        font-size: 10px;
+
+      }
+
+      .linkedin-icon {
+        background-color: #0077b5;
+        padding: 10px;
+        width: 180px;
+        max-width: 1200px;
+        height: 65px;
+
+      }
+
+
+      .whatsapp-icon {
+        background-color: #0077b5;
+        padding: 10px;
+        width: 180px;
+        max-width: 1200px;
+        height: 65px;
+      }
+
+      .github-icon {
+        background-color: #0077b5;
+        padding: 10px;
+        width: 180px;
+        max-width: 1200px;
+        height: 60px;
+
+      }
+
+      .email-icon {
+        background-color: #0077b5;
+        padding: 10px;
+        width: 180px;
+        max-width: 1200px;
+        height: 60px;
+      }
+    }
+
+
+
+
+    * {
+
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+
+    h1#inicio {
+      padding-top: 80px;
+      padding-bottom: 2px;
+    }
+
+
+    .navbar-toggler {
+      border: 1px solid rgb(91, 233, 233);
+      /* Borda azul fina */
+      border-radius: 5px;
+      /* Cantos arredondados */
+      position: relative;
+    }
+
+    /* Quando o botão é clicado ou está ativo */
+    .navbar-toggler:focus,
+    .navbar-toggler:hover {
+      box-shadow: 0 0 8px 4px rgba(91, 233, 233, 1);
+      /* Brilho suave ao redor da borda */
+      outline: none;
+      /* Remove a borda padrão preta */
+    }
+
+    /* Estilo para o ícone dentro do navbar-toggler */
+    .navbar-toggler i {
+      color: rgb(91, 233, 233);
+      font-size: 24px;
+      transition: box-shadow 0.3s ease;
+      /* Transição suave para o brilho */
+      position: relative;
+      z-index: 1;
+      /* Garante que o ícone fique acima do brilho */
+    }
+
+    /* Efeito de brilho nas bordas do ícone ao passar o mouse */
+    .navbar-toggler:hover {
+      box-shadow: 0 0 8px 4px rgba(91, 233, 233, 1);
+      /* Brilho ao redor da borda, não no interior */
+    }
+
+
+
+    .carousel-item img {
+      max-width: 1215px;
+      /* Ajusta à largura do contêiner */
+      max-height: 700px;
+      margin-right: 15px;
+      border-radius: 18px;
+      margin: 4px;
+      margin-top: 0px;
+
+    }
+
+    .carousel-item {
+      width: auto;
+    }
+
+    .profile-image {
+      position: relative;
+
+      background-color: rgba(241, 244, 247, 0.79);
+    }
+
+
+
+    .accordion-body {
+      background-color: rgb(230, 233, 236, 0.79);
+      /* Cor de fundo clara */
+      color: rgb(21, 24, 24);
+      /* Cor do texto */
+      border-radius: 12px;
+      /* Cantos arredondados */
+      padding: 15px;
+      /* Espaçamento interno */
+    }
+
+
+    .accordion-header button:hover {
+      background-color: rgb(57, 163, 163);
+      /* Tom mais escuro ao passar o mouse */
+      border-color: rgb(57, 163, 163);
+      color: white;
+      /* Texto branco ao hover */
+    }
+
+
+    p {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    nav {
+
+      color: rgb(91, 233, 233);
+      background-color: rgb(22, 54, 54);
+      padding-top: 20px;
+      position: fixed;
+
+    }
+
+    button {
+      color: rgb(91, 233, 233);
+    }
+
+    dt {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    p {
+
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 23px;
+    }
+
+    li {
+
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    }
+
+    h1 {
+
+      padding: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      font-size: 32px;
+
+    }
+
+    h3 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      padding-top: 4px;
+    }
+
+    h2 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      padding-top: 2px;
+    }
+
+
+    footer {
+      height: auto;
+      padding: 18px 0;
+      background-color: rgb(22, 54, 54);
+      border-radius: 2px;
+      color: rgb(91, 233, 233);
+      margin-top: 15px;
+      font-size: 16px;
+      display: table;
+      width: 100%;
+      text-align: center;
+    }
+
+
+
+    /* Estilo para ícones */
+
+    .whatsapp-icon,
+    .linkedin-icon {
+      position: relative;
+      background-color: #1ec45a;
+      padding: 10px;
+      margin: 15px;
+      border-radius: 17px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 15px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      max-width: 430px;
+    }
+
+    .whatsapp-icon:hover {
+      background-color: rgb(6, 124, 77);
+    }
+
+
+    .linkedin-icon {
+      background-color: #0077b5;
+      padding: 10px;
+
+    }
+
+    .linkedin-icon:hover {
+      background-color: rgb(59, 142, 142);
+      /* Tom de hover para o LinkedIn */
+    }
+
+
+    /* Estilo para o ícone do GitHub */
+
+    .github-icon {
+      background-color: #333;
+      padding: 10px;
+      margin: 15px;
+      border-radius: 17px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 15px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      max-width: 430px;
+    }
+
+    .github-icon:hover {
+      background-color: #555;
+    }
+
+
+    /* Estilo para o ícone do e-mail */
+
+
+    .email-icon {
+      background-color: #d44638;
+      padding: 10px;
+      margin: 15px;
+      border-radius: 17px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 15px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      max-width: 430px;
+    }
+
+    .email-icon:hover {
+      background-color: #b33a2e;
+    }
+
+    h2 {
+
+      font-size: 20px;
+
+    }
+
+    i {
+
+      padding-right: 2px;
+    }
+
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      display: inline-block;
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      transform: translateY(-6px);
+      box-shadow: 0px 7px 12px rgba(194, 24, 24, 0.2);
+    }
+
+    .navbar-collapse.show {
+      position: relative;
+      top: 0;
+
+      width: 100%;
+      background-color: rgb(22, 54, 54);
+      z-index: 1070;
+      /* Garante que fique acima do conteúdo */
+      padding: 10px;
+      /* Adiciona espaçamento */
+      overflow-y: auto;
+      /* Adiciona barra de rolagem, se necessário */
+      max-height: 100vh;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:hover {
+      outline: none;
+      /* Remove a borda azul ao focar */
+    }
+
+    body.navbar-open {
+      overflow: hidden;
+      /* Impede que a página por trás role */
+    }
+
+
+    /*                     SKILLS           */
+
+    .skills-section {
+      padding: 60px 20px;
+      background-color: #788c91;
+      text-align: center;
+
+    }
+
+    .skills-section .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #165454;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skill-item {
+      flex: 1 1 calc(25% - 20px);
+      /* Responsividade */
+      max-width: calc(25% - 20px);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-9px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .skill-item i {
+      font-size: 2rem;
+      color: #2c6e6e;
+      margin-bottom: 15px;
+    }
+
+    .skill-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #165454;
+    }
+
+    .skill-item p {
+      font-size: 0.95rem;
+      color: #666;
+
+    }
+
+    /* Responsividade para telas menores */
+
+    @media (max-width: 768px) {
+      .skill-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+
+
+    @media (max-width: 480px) {
+      .skill-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+
+    }
+  </style>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js "
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"
+        style="color:rgb(91, 233, 233); font-family: Arial Black; font-size:20px; padding: 10px;"> Sê Bem-vindo á
+        página</a>
+      <button style="color:rgb(91, 233, 233);" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <i class="fas fa-bars" style="color: rgb(91, 233, 233); font-size: 24px;"></i>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#inicio" style="color:rgb(91, 233, 233);"> Início</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre" style="color:rgb(91, 233, 233);">Contacto</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#contacto" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" style="color:rgb(91, 233, 233);"> Mais </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" style="color:rgb(60, 118, 118);">Projectos</a></li>
+              <li><a class="dropdown-item" href="#Habilities" style="color:rgb(60, 118, 118);">Habilidades </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#" style="color:rgb(60, 118, 118);">Mais Alguma Coisa...</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+
+        <form class="d-flex" role="Pesquisa">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+          <button class="btn" type="submit" style="color:rgb(91, 233, 233);">Pesquisar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <h1 id="inicio"><strong>Dev Nats</strong></h1>
+
+  <div class="profile-image">
+    <img src="imgs/NatsProfile.jpg" alt="My picture">
+  </div>
+
+
+  <style>
+    .profile-image {
+      position: absolute;
+      top: calc(100px + 1.5rem);
+      /* Ajuste fino para posicionar perto da seção */
+      right: 100px;
+      width: 125px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgb(91, 233, 233);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    @media screen and (max-width: 728px) {
+
+      .profile-image {
+        position: absolute;
+        top: calc(75px + 2rem);
+        /* Ajuste fino para posicionar perto da seção */
+        right: 15px;
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid rgb(91, 233, 233);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .carousel-item img {
+        height: 250px;
+      }
+    }
+  </style>
+
+
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+
+
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="imgs/MelRibeiro - Overvie.O.gif" class="d-block" alt="Image ">
+          <div class="form-text">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-item">
+
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            <strong> Quem é Nataniel Gomes ?</strong>
+          </button>
+        </h2>
+
+        <div id="collapseOne" class="accordion-collapse collapse">
+          <div class="accordion-body">
+
+            <strong> Minha Breve Jornada Para o Front-End </strong>
+
+            <br>
+            Olá, meu nome é Nataniel Gomes tenho 19 anos de idade e estou no 3º ano do ensino Médio, e entrei
+            para o mundo de Desenvolvimento Web, apesar de
+            ainda estar no Ensino Médio.
+
+            Eu sou um rapaz auto-de-data no Desenvolvimento web sempre pronto e disposto para aprender o que for
+            necessário, Humilde e Proativo,
+            que apesar de muitas vezes ter de lidar com contra-tempos, falta
+            de alguns recursos fundamentais como: valores monetários, bem como internet;
+            <br>
+            Continuo a dar o meu melhor para realizr objectivos e metas estabelecidas, e sempre confiante que no momento
+            certo, eu estarei empregando a função
+            que já a muito tempo quis exercer, um "Desenvovedor-web".
+            <hr>
+            E graças a um progama de Estudo direcionado, pelomenos por agora conto com as habilidades a baixo:
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+
+          <section id="Habilities" class="skills-section">
+            <div class="container">
+              <h2 class="section-title">Minhas Habilidades</h2>
+
+              <div class="skills-list">
+                <div class="skill-item">
+                  <i class="fas fa-code"></i>
+                  <h3>Desenvolvimento Web</h3>
+                  <p>HTML, CSS, JavaScript, React, Node.js, Git & GitHub, NPM</p>
+                </div>
+
+                <div class="skill-item">
+                  <i class="fas fa-paint-brush"></i>
+                  <h3>Design </h3>
+                  <p> UX, LCP, CLS</p>
+
+                </div>
+
+                <div class="skill-item">
+                  <i class="fas fa-database"></i>
+                  <h3>Base de Dados </h3>
+                  <p>Mongo Db</p>
+                </div>
+
+                <div class="skill-item">
+                  <i class="fas fa-cogs"></i>
+                  <h3>Outras Habilidades</h3>
+                  <p> Metodologias Ágeis, C#, C++</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <footer id="sobre">
+            <li style="font-size: 20px;"> Contacte-me: </li>
+            <hr>
+            <dl>
+              <ul>
+
+                <a href="mailto:Natanielg73@gmail.com" target="_blank" class="email-icon">
+                  <i class="fas fa-envelope"></i> E-mail
+                </a>
+              </ul>
+
+            </dl>
+
+            <ul>
+              <a href="https://github.com/DevNats144" target="_blank" class="github-icon">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </ul>
+
+
+            <ul>
+              <a href="https://www.linkedin.com/in/nataniel-gomes-330a94342/" target="_blank" class="linkedin-icon">
+                <i class="fab fa-linkedin"></i>LinkedIn
+              </a>
+            </ul>
+
+            <ul>
+              <a href="https://wa.me/951518338" target="_blank" class="whatsapp-icon">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+            </ul>
+
+
+            <p style="text-align: justify; vertical-align: middle;">» Nats Site «</p>
+          </footer>
+
+
+</body>
+
+</html>
