@@ -595,6 +595,25 @@
     </div>
   </nav>
 
+  <script>
+  document.addEventListener('click', function (e) {
+    const navbar = document.querySelector('.navbar');
+    const toggler = document.querySelector('.navbar-toggler');
+
+    // Se a navbar estiver visível
+    if (navbar.classList.contains('show') || window.getComputedStyle(navbar).display !== 'none') {
+      navbar.style.display = 'none';
+    }
+
+    // Opcional: reexibir a navbar ao clicar no botão novamente
+    toggler.addEventListener('click', function () {
+      navbar.style.display = 'block';
+    });
+  });
+  
+</script>
+
+
   <h1 id="inicio"><strong>Dev Nats</strong></h1>
 
   <div class="profile-image">
