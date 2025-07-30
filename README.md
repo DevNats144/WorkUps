@@ -1,4 +1,4 @@
-# 🌐 Nats Site.ao.co
+# 🌐 Nats Site
 
 Este é um site pessoal criado por mim, **Dev Nats**, com o objetivo de apresentar minhas habilidades, projetos e informações de contato de forma moderna, responsiva e estilizada com **Bootstrap 5**.
 
