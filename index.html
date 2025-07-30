@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
   <meta charset="UTF-8">
@@ -602,7 +602,6 @@
 
     // Verifica se o menu colapsável está aberto
     if (navbarCollapse.classList.contains('show')) {
-      // Garante que o clique não seja no próprio botão
       if (!toggler.contains(e.target)) {
         const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
         bsCollapse.hide(); // Fecha o menu responsivo
