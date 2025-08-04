@@ -594,21 +594,22 @@
       </div>
     </div>
   </nav>
-
-  <script>
+<script>
   document.addEventListener('click', function (e) {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const toggler = document.querySelector('.navbar-toggler');
 
-    // Verifica se o menu colapsável está aberto
+    // Verifica se o menu está aberto
     if (navbarCollapse.classList.contains('show')) {
-      if (!toggler.contains(e.target)) {
+      // Verifica se o clique foi fora do menu e fora do botão hamburguer
+      if (!navbarCollapse.contains(e.target) && !toggler.contains(e.target)) {
         const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-        bsCollapse.hide(); // Fecha o menu responsivo
+        bsCollapse.hide(); // Fecha o menu
       }
     }
   });
 </script>
+
 
 
   <h1 id="inicio"><strong>Dev Nats</strong></h1>
